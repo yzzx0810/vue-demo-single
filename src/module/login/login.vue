@@ -1,6 +1,7 @@
 <template>
-  <div>
-    欢迎来到vue-demo~~~~~~
+  <div class="home">
+    <p>欢迎来到vue-demo~~~~~~</p>
+    <p>欢迎来到vue-demo~~~~~~</p>
   </div>
 </template>
 
@@ -12,6 +13,6 @@
   export default login;
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+  @import "../../css/login/login";
 </style>
