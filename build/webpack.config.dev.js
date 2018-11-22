@@ -4,9 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 //样式文件分别打包
-const ExtractTextPluginCss = new ExtractTextPlugin('css/[name]/[name]-one.css');
-const ExtractTextPluginScss = new ExtractTextPlugin('css/[name]/[name]-two.css');
-const ExtractTextPluginLess = new ExtractTextPlugin('css/[name]/[name]-three.css');
+const ExtractTextPluginCss = new ExtractTextPlugin('scss/[name]/[name]-one.css');
+const ExtractTextPluginScss = new ExtractTextPlugin('scss/[name]/[name]-two.css');
+const ExtractTextPluginLess = new ExtractTextPlugin('scss/[name]/[name]-three.css');
 
 module.exports = {
   mode: "development",
@@ -20,7 +20,7 @@ module.exports = {
     publicPath: "/"
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json', '.scss'],
+    extensions: ['.js', '.vue', '.json', 'css', '.scss'],
     alias: {
       "vue": 'vue/dist/vue.js',
       "@": path.join(__dirname, "..")
@@ -37,7 +37,7 @@ module.exports = {
         use: ExtractTextPluginCss.extract({
           use: [
             {
-              loader: "css-loader",
+              loader: "scss-loader",
               options: {importLoaders: 1}//1代表css-loader后还需要几个loader
             },
             {
@@ -53,7 +53,7 @@ module.exports = {
         use: ExtractTextPluginScss.extract({
           use: [
             {
-              loader: "css-loader",
+              loader: "scss-loader",
               options: {importLoaders: 2}
             },
             {
@@ -72,7 +72,7 @@ module.exports = {
         use: ExtractTextPluginLess.extract({
           use: [
             {
-              loader: "css-loader",
+              loader: "scss-loader",
               options: {importLoaders: 2}
             },
             {

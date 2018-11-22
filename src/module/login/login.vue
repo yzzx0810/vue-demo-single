@@ -14,5 +14,8 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "../../css/login/login";
+  @import "../../scss/login/login";
+</style>
+<style lang="css" scoped>
+  @import "../../css/login/login.css";
 </style>
