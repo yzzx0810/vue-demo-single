@@ -1,0 +1,4 @@
+//babel --> js语法编译转换器
+{
+  "presets": ["env"]
+}
