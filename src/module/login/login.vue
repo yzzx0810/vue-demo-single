@@ -1,20 +1,28 @@
 <template>
   <div class="home">
-    <header class="mui-bar mui-bar-nav">
-      <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-      <h1 class="mui-title">MUI_Test</h1>
-    </header>
+    <button @click="buttonTest">Test</button>
 
   </div>
 </template>
 
 <script>
-  import mui from "@/src/assets/js/mui.js"
-  const login = {
-    created(){
-      mui.init();
-    }
+  //  import mui from "@/src/assets/js/mui.js"
+  import { Indicator } from 'mint-ui';
 
+  const login = {
+    components:{
+      Indicator
+    },
+    methods: {
+      buttonTest: () => {
+        let a = "fadfasf";
+        window.alert(a);
+        Indicator.open('加载中...');
+        setTimeout(function () {
+          Indicator.close();
+        }, 2000);
+      }
+    }
   };
 
   export default login;

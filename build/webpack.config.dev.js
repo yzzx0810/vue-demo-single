@@ -26,8 +26,13 @@ module.exports = {
       "@": path.join(__dirname, "..")
     }
   },
-  module: {
+  module: {//loader加载执行顺序从右往左
     rules: [
+      {
+        test: /\.js$/,
+        use: ['babel-loader'],
+        exclude: /node_modules/
+      },
       {
         test: /\.vue$/,
         loader: "vue-loader"
@@ -39,6 +44,12 @@ module.exports = {
             {
               loader: "css-loader",
               options: {importLoaders: 1}//1代表css-loader后还需要几个loader
+            },
+            {
+              loader: "px2rem-loader",
+              options: {
+                remUnit: 40//设计稿/10
+              }
             },
             {
               loader: 'postcss-loader',
@@ -54,7 +65,13 @@ module.exports = {
           use: [
             {
               loader: "css-loader",
-              options: {importLoaders: 2}
+              // options: {importLoaders: 1}
+            },
+            {
+              loader: "px2rem-loader",
+              options: {
+                remUnit: 40//设计稿/10
+              }
             },
             {
               loader: "sass-loader"
@@ -74,6 +91,12 @@ module.exports = {
             {
               loader: "css-loader",
               options: {importLoaders: 2}
+            },
+            {
+              loader: "px2rem-loader",
+              options: {
+                remUnit: 40//设计稿/10
+              }
             },
             {
               loader: "less-loader"
@@ -125,9 +148,7 @@ module.exports = {
     }
   },
   plugins: [
-    new webpack.ProvidePlugin({
-      mui: "mui",
-    }),
+    new webpack.ProvidePlugin({}),
     new VueLoaderPlugin(),
     new webpack.HotModuleReplacementPlugin(),//实现页面自动刷新，与hot：true配对使用
     new HtmlWebpackPlugin({
