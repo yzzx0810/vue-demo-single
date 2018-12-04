@@ -10,7 +10,7 @@ const ExtractTextPluginScss = new ExtractTextPlugin('css/[name]/[name]-two.[chun
 const ExtractTextPluginLess = new ExtractTextPlugin('css/[name]/[name]-three.[chunkhash].css');
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   devtool: "cheap-module-source-map",
   entry: {
     index: "@/index.js"

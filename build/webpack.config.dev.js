@@ -1,8 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 //样式文件分别打包
 const ExtractTextPluginCss = new ExtractTextPlugin('css/[name]/[name]-one.css');
 const ExtractTextPluginScss = new ExtractTextPlugin('css/[name]/[name]-two.css');
