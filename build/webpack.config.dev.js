@@ -17,7 +17,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "../dist"),//编译输出的文件目录绝对路径
     filename: "js/index.js",
-    publicPath: "/"
+    publicPath: "./"
   },
   resolve: {
     extensions: ['.js', '.vue', '.json', '.css', '.scss'],

@@ -1,7 +1,8 @@
 import Vue from 'vue';
+import router from './src/router/index';
 import MintUI from 'mint-ui';
 import 'mint-ui/lib/style.css'
-import login from './src/module/login/login.vue'
+import EnterPage from './src/module/enterPage/enterPage'
 import './src/assets/css/mui.css'
 import 'lib-flexible'
 
@@ -9,7 +10,8 @@ Vue.use(MintUI);
 new Vue({
   el: "#main",
   components: {
-    login
+    EnterPage
   },
-  template: "<login></login>"
+  router,
+  template: "<EnterPage></EnterPage>"
 });
