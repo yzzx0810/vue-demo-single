@@ -18,7 +18,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, "../dist"),//编译输出的文件目录绝对路径
         filename: "js/[name].[chunkhash].js",
-        publicPath: "/"
+        publicPath: "./"//引入资源文件的前缀公共路径
     },
     resolve: {
         extensions: ['.js', '.vue', '.json', '.css', '.scss'],
