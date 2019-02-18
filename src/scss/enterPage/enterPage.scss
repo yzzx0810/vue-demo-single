@@ -1,0 +1,99 @@
+@keyframes progressbar {
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    border: solid;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+
+    .row1 {
+        width: 200px;
+        height: 50px;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .row2 {
+        height: 20px;
+        width: 40px;
+        background-color: #ECECEC;
+        line-height: 20px;
+        text-align: center;
+    }
+}
+
+article {
+    .content {
+        font-size: 18px;
+        line-height: 25px;
+        color: #84D54B;
+    }
+}
+
+footer {
+    margin-top: 10px;
+
+    .part_1 {
+        display: flex;
+        justify-content: space-around;
+
+        .item {
+            width: 160px;
+            height: 30px;
+            border: 1px solid #CECECE;
+            font-size: 14px;
+            line-height: 30px;
+            text-align: center;
+        }
+    }
+
+    .part_2 {
+        display: flex;
+
+        .left, .right {
+            margin-top: 10px;
+
+            .title {
+                color: #C8DAE0;
+            }
+        }
+
+        .left {
+            width: 30%;
+        }
+
+        .right {
+            width: 70%;
+        }
+
+        .progress {
+            height: 10px;
+            background-color: #f7f7f7;
+
+            .bar {
+                width: 0%;
+                height: 100%;
+                box-sizing: border-box;
+                background-color: #0e90d2;
+                animation: progressbar 3s;
+                animation-fill-mode: forwards;
+            }
+        }
+
+    }
+}

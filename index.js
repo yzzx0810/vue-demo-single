@@ -1,14 +1,11 @@
 import Vue from 'vue';
 import router from './src/router/index';
-import MintUI from 'mint-ui';
-import 'mint-ui/lib/style.css'
 import EnterPage from './src/module/enterPage/enterPage'
-import './src/assets/css/mui.css'
 import 'lib-flexible'
+import './src/assets/css/base.css'
 
-Vue.use(MintUI);
 new Vue({
-  el: "#main",
+  el: "#root",
   components: {
     EnterPage
   },
